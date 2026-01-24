@@ -307,6 +307,55 @@ function showToast(message, type = 'info') {
 }
 
 
+// Exportar e importar
+
+function exportData() {
+    const json = JSON.stringify(state.progress, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const today = new Date().toISOString().slice(0, 10);
+
+    // Truco para descargar un archivo: un enlace temporal con "download" y click()
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `warframe-prime-data-${today}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+
+    showToast('Datos exportados', 'success');
+}
+
+function isValidProgress(data) {
+    return data !== null && typeof data === 'object' && !Array.isArray(data);
+}
+
+async function importData(event) {
+    const input = event.target;
+    const file = input.files[0];
+    if (!file) return;
+
+    try {
+        const data = JSON.parse(await file.text());
+        if (!isValidProgress(data)) {
+            throw new Error('El archivo no tiene el formato esperado');
+        }
+
+        if (confirm('Se va a sobrescribir tu progreso actual. ¿Continuar?')) {
+            state.progress = data;
+            saveProgress();
+            render();
+            showToast('Datos importados', 'success');
+        }
+    } catch (error) {
+        console.error(error);
+        showToast('No se pudo importar el archivo');
+    }
+
+    // Si no se vacía, al elegir el mismo archivo otra vez no salta el evento change
+    input.value = '';
+}
+
+
 // Eventos
 
 function setActiveButton(buttons, activeButton) {
@@ -371,6 +420,11 @@ function setupEventListeners() {
             setAllComponents(actionButton.dataset.itemId, markAll);
         }
     });
+
+    const importInput = document.getElementById('importFile');
+    document.getElementById('exportBtn').addEventListener('click', exportData);
+    document.getElementById('importBtn').addEventListener('click', () => importInput.click());
+    importInput.addEventListener('change', importData);
 }
 
 

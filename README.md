@@ -7,6 +7,7 @@ Web para llevar la cuenta de qué piezas tienes de cada objeto Prime de Warframe
 - Pestañas por tipo de objeto y búsqueda por nombre
 - Filtros por estado (completos, en progreso, sin empezar) y por categoría de arma
 - Botones para marcar todas las piezas de un objeto o reiniciarlo
+- Exportar e importar el progreso como archivo JSON
 
 ## Cómo usarlo
 
@@ -16,3 +17,5 @@ El progreso se guarda en el `localStorage` del navegador, con la clave `warframe
 
 - si borras los datos del navegador, se pierde
 - en otro navegador o en modo incógnito no aparece
+
+Para pasarlo de un navegador a otro, usa **Exportar** y luego **Importar**.
