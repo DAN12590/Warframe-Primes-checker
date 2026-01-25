@@ -148,10 +148,12 @@ function matchesStatusFilter(item) {
 function getVisibleItems() {
     const query = state.searchQuery.trim().toLowerCase();
 
+    // filter() devuelve un array nuevo, así el sort no desordena PRIME_DATA
     return ITEMS_BY_TAB[state.activeTab]
         .filter((item) => state.categoryFilter === 'all' || item.category === state.categoryFilter)
         .filter(matchesStatusFilter)
-        .filter((item) => item.name.toLowerCase().includes(query));
+        .filter((item) => item.name.toLowerCase().includes(query))
+        .sort((a, b) => a.name.localeCompare(b.name));
 }
 
 
