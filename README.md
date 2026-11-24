@@ -2,7 +2,7 @@
 
 Web para llevar la cuenta de qué piezas tienes de cada objeto Prime de Warframe: Warframes, armas, centinelas y archwings. Marcas las piezas que vas consiguiendo y ves el progreso de cada objeto y el total.
 
-Demo: https://dan12590.github.io/hosting/demos/warframe-tracker/
+Demo: https://danapps.dev/demos/warframe-tracker/
 
 ## Qué hace
 
