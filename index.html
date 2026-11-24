@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warframe Prime Tracker</title>
-    <meta name="description" content="Gestiona tu colección de Warframes Prime y Armas Prime. Marca componentes, visualiza progreso y filtra por estado.">
+    <title>Warframe Prime Tracker · Controla tus Warframes y armas Prime</title>
+    <meta name="description" content="Tracker gratuito de Warframe Prime: marca los componentes que tienes de cada Warframe, arma, centinela y archwing Prime, filtra por estado y mira tu progreso. Se guarda en el navegador.">
+    <meta name="author" content="David Hernáez Castejón">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="canonical" href="https://warframe-checker.danapps.dev/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <!-- Lo que se ve al compartir el enlace -->
+    <meta property="og:title" content="Warframe Prime Tracker">
+    <meta property="og:description" content="Marca los componentes Prime que tienes y mira cuánto te falta para completar la colección.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://warframe-checker.danapps.dev/">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:image" content="https://warframe-checker.danapps.dev/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Captura del tracker con las tarjetas de Warframes Prime y sus componentes">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Para que Google sepa que es una aplicación web gratuita -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Warframe Prime Tracker",
+        "url": "https://warframe-checker.danapps.dev/",
+        "description": "Tracker para marcar los componentes de Warframes, armas, centinelas y archwings Prime que ya tienes.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "es",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "David Hernáez Castejón", "url": "https://danapps.dev/" }
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,8 +45,8 @@
         <div class="header-content">
             <div class="header-top">
                 <div class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <h1>Prime Tracker</h1>
+                    <span class="logo-icon" aria-hidden="true">⚡</span>
+                    <h1>Warframe Prime Tracker</h1>
                 </div>
 
                 <div class="search-container">
